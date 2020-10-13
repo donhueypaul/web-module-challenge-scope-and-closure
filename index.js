@@ -56,8 +56,8 @@ function counter2() {
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(){
-return Math.round(Math.random() * 2)
+function inning(number){
+return Math.round(Math.random() * number)
 }
 
 /* Task 3: finalScore()
@@ -73,13 +73,16 @@ finalScore(inning, 9) might return:
 }
 
 */ 
-
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(callback, innings) {
+  let scoreFinal = {
+    home: callback(innings),
+    away: callback(innings),
+  }
+  return scoreFinal 
+  
 }
 
+console.log(finalScore(inning, 9))
 /* Task 4: 
 
 Create a function called `scoreboard` that accepts the following parameters: 
